@@ -8,6 +8,7 @@ stop_marker = input("Enter the ending timestamp of the clip you want extracted. 
 end_file_path = input("Enter the file path for the location you want the clip saved, ex: C:\\Users\Me\SermonFolder\\\n")
 clip_name = input("Enter the name of the new clip.\n")
 
+# creating file path of output video
 output_video = end_file_path + clip_name
 
 # create a video clip object
