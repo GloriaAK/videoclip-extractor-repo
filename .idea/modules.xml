@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/VideoClipExtractor.iml" filepath="$PROJECT_DIR$/.idea/VideoClipExtractor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/secondpyproject.iml" filepath="$PROJECT_DIR$/.idea/secondpyproject.iml" />
     </modules>
   </component>
 </project>
