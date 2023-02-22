@@ -3,8 +3,44 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5821d5e-8224-4e19-92be-9145ad331be1" name="Changes" comment="" />
+    <list default="true" id="b5821d5e-8224-4e19-92be-9145ad331be1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/secondpyproject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/secondpyproject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Clip-1-smash-and-grab.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMedia/Clip-1-smash-and-grab.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestFiles/Clip-2-I-like-to-sleep.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMedia/Clip-2-I-like-to-sleep.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestFiles/I_LOVE_TO_SLEEP_two.vtt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMedia/I_LOVE_TO_SLEEP_two.vtt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestFiles/I_LOVE_TO_SLEEP_twoSS.srt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMedia/I_LOVE_TO_SLEEP_twoSS.srt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/green_back.png" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMedia/green_back.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/green_final.png" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMedia/green_final.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/renewed_code1.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMedia/renewed_code1.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/subtitleAdder.py" beforeDir="false" afterPath="$PROJECT_DIR$/subtitleAdder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/subtitleRefiner.py" beforeDir="false" afterPath="$PROJECT_DIR$/subtitleRefiner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/surgical_clip_cutter.py" beforeDir="false" afterPath="$PROJECT_DIR$/surgical_clip_cutter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testingStuff.py" beforeDir="false" afterPath="$PROJECT_DIR$/testingStuff.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testingStuff_Vid2.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMedia/testingStuff_Vid2.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vid_clip_Man6.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMedia/vid_clip_Man6.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoclipManipulator.py" beforeDir="false" afterPath="$PROJECT_DIR$/videoclipManipulator.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,15 +67,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Gabriel/PycharmProjects/secondpyproject&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
-  }
-}</component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\glori\PycharmProjects\VideoClipExtractor\ProjectMedia" />
+    </key>
+  </component>
   <component name="RunManager" selected="Python.surgical_clip_cutter">
     <configuration name="subtitleRefiner" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="secondpyproject" />
@@ -134,7 +170,10 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="b5821d5e-8224-4e19-92be-9145ad331be1" name="Changes" comment="" />
@@ -155,5 +194,12 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="740" y="261" key="FileChooserDialogImpl" timestamp="1677099631521">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="261" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1677099631521" />
   </component>
 </project>

@@ -2,10 +2,10 @@ from moviepy.video.io.VideoFileClip import VideoFileClip
 from moviepy.video.tools.subtitles import SubtitlesClip
 
 # Load the video file
-video = VideoFileClip("TestFiles/Clip-2-I-like-to-sleep.mp4")
+video = VideoFileClip("ProjectMedia/Clip-2-I-like-to-sleep.mp4")
 
 # Load the subtitles from the .vtt file
-subtitles = SubtitlesClip("TestFiles/I_like_to_sleep.vtt", video.fps)
+subtitles = SubtitlesClip("ProjectMedia/I_like_to_sleep.vtt", video.fps)
 
 # Combine the video and subtitles
 final_video = video.set_audio(video.audio).set_subtitles(subtitles)

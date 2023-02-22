@@ -2,7 +2,7 @@
 # pip.main(['install','moviepy'])
 from moviepy.editor import *
 
-clip2_video = VideoFileClip("Clip-1-smash-and-grab.mp4")
+clip2_video = VideoFileClip("ProjectMedia/Clip-1-smash-and-grab.mp4")
 
 # internal surgical clipping
 # cut_start = "00:00:08.00"

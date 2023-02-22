@@ -1,5 +1,5 @@
 import pysrt
-subs = pysrt.open("TestFiles/I_LOVE_TO_SLEEP_twoSS.srt")
+subs = pysrt.open("ProjectMedia/I_LOVE_TO_SLEEP_twoSS.srt")
 
 # for i in subs:
 #     # print(sub.text)

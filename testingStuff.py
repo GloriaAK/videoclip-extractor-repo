@@ -4,16 +4,16 @@ from moviepy.video.tools.subtitles import SubtitlesClip
 
 # subtitle generator
 generator = lambda txt: TextClip(txt, font='Calibri', fontsize=90, color='white')
-subs = SubtitlesClip('TestFiles/I_LOVE_TO_SLEEP_twoSS.srt', generator)
+subs = SubtitlesClip('ProjectMedia/I_LOVE_TO_SLEEP_twoSS.srt', generator)
 subtitles = SubtitlesClip(subs, generator)
 
 # import and crop videos, volume control, and determine vid length
 video_start = "0:00:00"
 video_end = "0:01:10"
-clip1 = ImageClip("green_back.png").subclip(video_start, video_end)
-clip2 = VideoFileClip("TestFiles/Clip-2-I-like-to-sleep.mp4").subclip(video_start, video_end).fx(afx.volumex, 3)
-clip3 = ImageClip("green_back.png").subclip(video_start, video_end)
-ender_clip = ImageClip("green_final.png").subclip("0:00:00", "0:00:02")
+clip1 = ImageClip("ProjectMedia/green_back.png").subclip(video_start, video_end)
+clip2 = VideoFileClip("ProjectMedia/Clip-2-I-like-to-sleep.mp4").subclip(video_start, video_end).fx(afx.volumex, 3)
+clip3 = ImageClip("ProjectMedia/green_back.png").subclip(video_start, video_end)
+ender_clip = ImageClip("ProjectMedia/green_final.png").subclip("0:00:00", "0:00:02")
 
 # when y2=less, img=less: for clip2, when x1=more, left side cuts more, when x2=more, right side cuts less:
 resized_clip1 = clip1.crop(x1=0, x2=0, y1=0, y2=540)
@@ -34,10 +34,10 @@ from moviepy.editor import *
 from moviepy.video.tools.subtitles import SubtitlesClip
 
 generator = lambda txt: TextClip(txt, font='Arial', fontsize=34, color='white')
-subs = SubtitlesClip('TestFiles/I_LOVE_TO_SLEEP_twoSS.srt', generator)
+subs = SubtitlesClip('ProjectMedia/I_LOVE_TO_SLEEP_twoSS.srt', generator)
 subtitles = SubtitlesClip(subs, generator)
 
-video = VideoFileClip("TestFiles/Clip-2-I-like-to-sleep.mp4")
+video = VideoFileClip("ProjectMedia/Clip-2-I-like-to-sleep.mp4")
 result = CompositeVideoClip([video, subtitles.set_pos(('center', 'bottom'))])
 
 result.write_videofile("testingStuff_Vid2.mp4")
