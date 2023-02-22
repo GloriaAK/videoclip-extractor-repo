@@ -18,4 +18,4 @@ body = adding_clips.resize( (1080, 1920) )
 final_body = body.cutout("0:00:08", "0:00:24")  # ‘01:03:05.35’
 
 final_clip = concatenate_videoclips([final_body, ender_clip])
-final_clip.write_videofile("vid_clip_Man6.mp4")
+final_clip.write_videofile("vid_clip_Man7.mp4")
