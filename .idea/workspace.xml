@@ -23,13 +23,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b5821d5e-8224-4e19-92be-9145ad331be1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/secondpyproject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/secondpyproject.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectMedia/I_LOVE_TO_SLEEP_twoSS.srt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectMedia/I_LOVE_TO_SLEEP_twoSS.srt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mainCode.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainCode.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/subtitleRefiner.py" beforeDir="false" afterPath="$PROJECT_DIR$/subtitleRefiner.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/surgical_clip_cutter.py" beforeDir="false" afterPath="$PROJECT_DIR$/surgical_clip_cutter.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,11 +52,11 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "last_opened_file_path": "C:/Users/Gabriel/PycharmProjects/secondpyproject - Clone"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\glori\PycharmProjects\VideoClipExtractor\ProjectMedia" />

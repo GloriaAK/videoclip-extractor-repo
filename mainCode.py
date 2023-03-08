@@ -3,7 +3,7 @@ from moviepy.editor import *
 from moviepy.video.tools.subtitles import SubtitlesClip
 # determine video length
 video_start = "0:00:00"
-video_end = "0:00:10"
+video_end = "0:01:00"
 # subtitle generator
 generator = lambda txt: TextClip(txt, font='Calibri', fontsize=75, color='white')
 subs = SubtitlesClip('ProjectMedia/I_LOVE_TO_SLEEP_twoSS.srt', generator)
@@ -48,5 +48,5 @@ video = VideoFileClip("ProjectMedia/Clip-2-I-like-to-sleep.mp4")
 result = CompositeVideoClip([video, subtitles.set_pos(('center', 'bottom'))])
 
 result.write_videofile("testingStuff_Vid2.mp4")
-
+how to printout the runtime envirnment within an exe in windows 10
 '''
