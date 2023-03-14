@@ -1,15 +1,23 @@
 # this is an integrated python file with subtitles, borders, volume control and limited surgical cutting
 from moviepy.editor import *
 from moviepy.video.tools.subtitles import SubtitlesClip
-# determine video length
+
+# variables for uploaded SRT file and video start and end times to be clipped
+srtSubs = 'ProjectMedia/I_LOVE_TO_SLEEP_twoSS.srt'
 video_start = "0:00:00"
 video_end = "0:01:00"
-# subtitle generator
-generator = lambda txt: TextClip(txt, font='Calibri', fontsize=75, color='white')
-subs = SubtitlesClip('ProjectMedia/I_LOVE_TO_SLEEP_twoSS.srt', generator)
-subtitles = SubtitlesClip(subs, generator)
-subtitle_edits1 = subtitles.subclip(video_start, video_end)
-subtitle_edits2 = subtitle_edits1.set_position('top').margin(top=20, opacity=0)
+
+# takes a srt file, a start time, an end time, and extracts subtitles between the time specified
+def subtitleExtractor(sub_file, vid_st, vid_en):
+	generator = lambda txt: TextClip(txt, font='Calibri', fontsize=75, color='white')
+	subs = SubtitlesClip(sub_file, generator)
+	subtitles = SubtitlesClip(subs, generator)
+	subtitle_edits1 = subtitles.subclip(vid_st, vid_en)
+	subtitle_edits2 = subtitle_edits1.set_position('top').margin(top=20, opacity=0)
+
+	return subtitle_edits2
+
+extracted_subs = subtitleExtractor(srtSubs, video_start, video_end)
 
 # import and clip videos, as well as volume control
 clip1 = ImageClip("ProjectMedia/green_back.png").subclip(video_start, video_end)
@@ -26,7 +34,7 @@ resized_clip3 = clip3.crop(x1=0, x2=0, y1=1380, y2=0)
 # creating the overlay with resized clips
 adding_clips = clips_array([[resized_clip1], [resized_clip2], [resized_clip3]])
 body = adding_clips.resize( (1080, 1920) )
-body_with_subs = CompositeVideoClip([body, subtitle_edits2])
+body_with_subs = CompositeVideoClip([body, extracted_subs])
 
 # cut six or less seconds of video
 with_cutting = body_with_subs.cutout(5, 6)
