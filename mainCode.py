@@ -1,7 +1,12 @@
 # this is an integrated python file with subtitles, borders, volume control and limited surgical cutting
 from moviepy.editor import *
 from moviepy.video.tools.subtitles import SubtitlesClip
-
+"""If after you download ImageMagick, you get a error stating "[WinError 2] The system cannot find the file specified.
+.This error can be due to the fact that ImageMagick is not installed on your computer, or (for Windows users) that you
+ didn't specify the path to the ImageMagick binary in file conf.py, or that the path you specified is incorrect",
+  then uncomment the following two lines"""
+# from moviepy.config import change_settings
+# change_settings({"IMAGEMAGICK_BINARY": r"C:\\Program Files\\ImageMagick-7.1.1-Q16-HDRI\\magick.exe"})
 # variables
 
 # srtSubs = 'ProjectMedia/I_LOVE_TO_SLEEP_twoSS.srt'
@@ -15,7 +20,7 @@ green_back_img = "ProjectMedia/green_back.png"
 green_ender_img = "ProjectMedia/green_final.png"
 video = "C:\\Users\\Gabriel\\OneDrive\\MBC Folder\\21-Broadcast\\21f-Raw Sermon Video\\Saved Sermons\\Faithful Men In Evil Days.mp4"
 video_start = "0:27:32"
-video_end = "0:27:35"
+video_end = "0:27:33"
 
 
 # takes a srt file, a start time, an end time, and extracts subtitles between the time specified
@@ -70,7 +75,7 @@ def clipAssembler(top_img, clip, bottom_img, subs, end_img):
 
 	# add the ender clip, title the video, and render
 	final_clip = concatenate_videoclips([with_cutting, end_img])
-	final_clip.write_videofile("CodeResult5.mp4")
+	final_clip.write_videofile("CodeResult6.mp4")
 
 
 # calling the functions
