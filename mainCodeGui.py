@@ -48,9 +48,9 @@ def mediaManipulator(med, vid_st, vid_end, placement):
     elif placement == "V":  # if it's a video
         media = VideoFileClip(med).subclip(vid_st, vid_end)
         adjusted_vid = media
-        if round(media.fps, 3) == 20.000:  # if it's a video filmed at 20 frames per second, use these crop numbers
+        if round(media.fps, 3) <= 20.000:  # if it's a video filmed at 20 frames per second, use these crop numbers
             resized_vid = adjusted_vid.crop(x1=160, x2=1120, y1=0, y2=0).resize(1.125)
-        elif round(media.fps, 3) == 23.976:  # if it's a video filmed at 24 frames per second, use these crop numbers
+        elif round(media.fps, 3) >= 23.000:  # if it's a video filmed at 24 frames per second, use these crop numbers
             resized_vid = adjusted_vid.crop(x1=120, x2=840, y1=0, y2=0).resize(1.5)
         else:
             resized_vid = adjusted_vid.crop(x1=120, x2=840, y1=0, y2=0).resize(1.5)  # else, you're pretty much screwed, just do whatever
