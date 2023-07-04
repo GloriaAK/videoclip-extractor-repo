@@ -3,7 +3,8 @@ try:
 except ImportError:  # python 2
     import Tkinter as tkinter
 
-
+from moviepy.editor import *
+from functools import partial
 mainWindow = tkinter.Tk()
 
 mainWindow.title("Aleph Pro")
@@ -58,18 +59,24 @@ radio3.grid(row=2, column=0, sticky='w')
 optionFrame['padx'] = 11
 optionFrame['pady'] = 10
 
+# Frame for the Name Entry
 nameFrame = tkinter.LabelFrame(border_firstHalf, text="PowerClip Name",
                                height=40, width=125, background="#383838",
                                fg='#0277bd')
 nameFrame.grid(row=2, column=0, sticky="nw", pady=5)
 nameFrame['padx'] = 10
 nameFrame['pady'] = 5
+# Title of Powerclip
 entry_4_name = tkinter.Entry(nameFrame, width=16, background="#444444")
 entry_4_name.grid(row=0, column=0)
 
+# Run button
+runButton = tkinter.Button(border_firstHalf, text="Render", command=lambda: run_action(),
+                           background="#444444", fg='#0277bd')
+runButton.grid(row=3, column=0, sticky="n", pady=10)
 # Spacing
-spacing_label = tkinter.Label(border_firstHalf, text=' ', font=('Calibri', 46), background="#383838")
-spacing_label.grid(row=3, column=0, sticky="n")
+spacing_label = tkinter.Label(border_firstHalf, text=' ', font=('Calibri', 17), background="#383838")
+spacing_label.grid(row=4, column=0, sticky="n")
 
 # SECOND HALF
 # Entry boxes and Frames
@@ -118,5 +125,48 @@ entry4 = tkinter.Entry(FourthFrame, width=20, background="#444444")
 entry5 = tkinter.Entry(FourthFrame, width=20, background="#444444")
 entry4.grid(row=0, column=0, padx=10)
 entry5.grid(row=0, column=1, padx=10)
+
+# Editing Code
+
+
+def create_vid():
+    theme = rbValue.get()
+    if theme == 1:  # if the green theme is selected
+        back_img = "ProjectMedia/blue_back_2.6.1.png"
+        ender_img = "ProjectMedia/blue_final_3.4.1.png"
+    else:           # else the blue theme is selected
+        back_img = "ProjectMedia/green_back.png"
+        ender_img = "ProjectMedia/green_final.png"
+
+    video_start = "0:32:20"
+    video_end = "0:32:23"
+    title = entry_4_name.get()
+    clip1 = ImageClip("{}".format(back_img)).subclip(video_start, video_end)
+    new_clips = VideoFileClip("C:\\Users\\Gabriel\\OneDrive\\MBC Folder\\21-Broadcast\\21f-Raw Sermon Video\\Saved Sermons\\Pay Attention To Last Words.mp4").subclip(video_start, video_end)
+    clip3 = ImageClip("{}".format(back_img)).subclip(video_start, video_end)
+    ender_clip = ImageClip("{}".format(ender_img)).subclip("0:00:00", "0:00:02")
+    # when y2=less, img=less: for clip2, when x1=more, left side cuts more, when x2=more, right side cuts less:
+
+    if round(new_clips.fps, 3) == 20.000:
+        resized_clip1 = clip1.crop(x1=0, x2=0, y1=0, y2=540)
+        resized_clip2 = new_clips.crop(x1=160, x2=1120, y1=0, y2=0).resize(1.125)
+        resized_clip3 = clip3.crop(x1=0, x2=0, y1=1380, y2=0)
+    elif round(new_clips.fps, 3) == 23.976:
+        resized_clip1 = clip1.crop(x1=0, x2=0, y1=0, y2=540)
+        resized_clip2 = new_clips.crop(x1=120, x2=840, y1=0, y2=0).resize(1.5)
+        resized_clip3 = clip3.crop(x1=0, x2=0, y1=1380, y2=0)
+    else:
+        resized_clip1 = clip1.crop(x1=0, x2=0, y1=0, y2=540)
+        resized_clip2 = new_clips.crop(x1=120, x2=840, y1=0, y2=0).resize(1.5)
+        resized_clip3 = clip3.crop(x1=0, x2=0, y1=1380, y2=0)
+
+    adding_clips = clips_array([[resized_clip1], [resized_clip2], [resized_clip3]])
+    body = adding_clips.resize((1080, 1920))
+
+    final_clip = concatenate_videoclips([body, ender_clip])
+    final_clip.write_videofile("C:\\Users\\Gabriel\\OneDrive\\MBC Folder\\29-Gen-Z\\29d-Finished Clips\\{}.mp4".format(title), fps=final_clip.fps)
+
+
+run_action = partial(create_vid)
 
 mainWindow.mainloop()
