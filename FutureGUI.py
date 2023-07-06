@@ -27,6 +27,7 @@ mainWindow.rowconfigure(3, weight=1)
 mainWindow.rowconfigure(4, weight=1)
 
 # FIRST HALF
+# Border for the First Half Section
 
 border_firstHalf = tkinter.LabelFrame(mainWindow, bd=5, background="#383838")
 border_firstHalf.grid(row=0, column=0, sticky="nw", pady=16)
@@ -86,7 +87,6 @@ border_second_half.grid(row=0, column=1, sticky='n', pady=16)
 border_second_half['padx'] = 11
 border_second_half['pady'] = 13
 
-
 TopFrame = tkinter.LabelFrame(border_second_half, text="Sermon Video Filepath",
                               height=50, width=416, background="#383838",
                               fg='#0277bd')
@@ -131,12 +131,16 @@ entry5.grid(row=0, column=1, padx=10)
 
 def create_vid():
     theme = rbValue.get()
-    if theme == 1:  # if the green theme is selected
+    if theme == 1:  # if the blue theme is selected
         back_img = "ProjectMedia/blue_back_2.6.1.png"
         ender_img = "ProjectMedia/blue_final_3.4.1.png"
-    else:           # else the blue theme is selected
+    elif theme == 2:  # if the green theme is selected
         back_img = "ProjectMedia/green_back.png"
         ender_img = "ProjectMedia/green_final.png"
+    else:           # else the red theme is selected
+        back_img = "ProjectMedia/red_border_img_1.1.1.png"
+        ender_img = "ProjectMedia/red_ender_img_1.1.1.png"
+
 
     video_start = "0:32:20"
     video_end = "0:32:23"
@@ -167,6 +171,8 @@ def create_vid():
     final_clip.write_videofile("C:\\Users\\Gabriel\\OneDrive\\MBC Folder\\29-Gen-Z\\29d-Finished Clips\\{}.mp4".format(title), fps=final_clip.fps)
 
 
-run_action = partial(create_vid)
+if __name__ == '__main__':
+    run_action = partial(create_vid)
+
 
 mainWindow.mainloop()

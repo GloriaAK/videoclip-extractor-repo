@@ -75,8 +75,8 @@ def create_vid(theme):
     title = ent1.get()
     clip1 = ImageClip("{}".format(back_img)).subclip(video_start, video_end)
     new_clips = VideoFileClip("C:\\Users\\Gabriel\\OneDrive\\MBC Folder\\21-Broadcast\\21f-Raw Sermon Video\\Saved Sermons\\Pay Attention To Last Words.mp4").subclip(video_start, video_end)
-    clip3 = ImageClip("{}".format(ender_img)).subclip(video_start, video_end)
-    ender_clip = ImageClip("ProjectMedia/green_final.png").subclip("0:00:00", "0:00:02")
+    clip3 = ImageClip("{}".format(back_img)).subclip(video_start, video_end)
+    ender_clip = ImageClip("{}".format(ender_img)).subclip("0:00:00", "0:00:02")
     # when y2=less, img=less: for clip2, when x1=more, left side cuts more, when x2=more, right side cuts less:
 
     if round(new_clips.fps, 3) == 20.000:
@@ -104,8 +104,8 @@ bl_action = partial(create_vid, 2)
 ent1 = tk.Entry(root, font=('Calibri', 14), background="#383838", width=70, fg='white')
 ent1.grid(column=2, row=2, padx=10, pady=2)
 
-exe_bnt1 = tk.Button(root, font=('Calibri', 14), text='Create A green Power Clip', command=lambda: grn_action(), width=45,
-                     background="#383838", fg='white')
+exe_bnt1 = tk.Button(root, font=('Calibri', 14), text='Create A green Power Clip', command=lambda: grn_action(),
+                     width=45, background="#383838", fg='white')
 exe_bnt2 = tk.Button(root, font=('Calibri', 14), text='Create A blue Power Clip', command=lambda: bl_action(), width=45,
                      background="#383838", fg='white')
 
