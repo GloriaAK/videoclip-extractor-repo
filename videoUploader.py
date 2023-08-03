@@ -74,7 +74,7 @@ parameters, error handling, and response parsing that your website requires.
 #     video_end = "0:32:23"
 #     title = ent1.get()
 #     clip1 = ImageClip("{}".format(back_img)).subclip(video_start, video_end)
-#     new_clips = VideoFileClip("C:\\Users\\Gabriel\\OneDrive\\MBC Folder\\21-Broadcast\\21f-Raw Sermon Video\\Saved Sermons\\Pay Attention To Last Words.mp4").subclip(video_start, video_end)
+#     new_clips = VideoFileClip("C:\\Users\\kluth_1eiw4u3\\OneDrive\\MBC Folder\\29-Gen-Z\\29a-Raw Sermon Video\\Archive\\2023-05-14 The Blessed Family.mp4").subclip(video_start, video_end)
 #     clip3 = ImageClip("{}".format(back_img)).subclip(video_start, video_end)
 #     ender_clip = ImageClip("{}".format(ender_img)).subclip("0:00:00", "0:00:02")
 #     # when y2=less, img=less: for clip2, when x1=more, left side cuts more, when x2=more, right side cuts less:
@@ -160,4 +160,20 @@ parameters, error handling, and response parsing that your website requires.
 #
 # if __name__ == '__main__':
 #     run_action = partial(create_vid)
-#
+
+from moviepy.editor import *
+clip = VideoFileClip("C:\\Users\\kluth_1eiw4u3\\OneDrive\\MBC Folder\\29-Gen-Z\\29a-Ra"
+                     "w Sermon Video\\2023-07-30 Obedience Of The Rechabit"
+                     "es.mp4").subclip("0:50:00", "0:50:10").fx(afx.volumex, 6.0)
+narration = clip.audio
+music = AudioFileClip("C:\\Users\\kluth_1eiw4u3\\OneDrive\\MBC Folder\\29-Gen-Z\\Music\\Tender"
+                      "Music\\Tender30_8.mp3").fx(afx.volumex, 0.50)
+music_over_words = CompositeAudioClip([narration, music])
+final_audio_and_video = clip.set_audio(music_over_words)
+
+
+
+final_audio_and_video.write_videofile("C:\\Users\\kluth_1eiw4u3\\OneDrive\\MBC Folder\\29-Gen-Z\\29e"
+                                      "-Finished Clips\\Video_Multiple6.mp4", audio_codec="aac", fps=clip.fps)
+
+

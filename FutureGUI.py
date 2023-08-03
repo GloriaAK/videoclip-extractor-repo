@@ -193,11 +193,11 @@ def clipAssembler(top_img, clip, bottom_img, subs, end_img):
 
 def audioAdditionAndFinalization(final_video, music_path, title):
     narration = final_video.audio
-    narration.fx(afx.volumex, 3)
-    music = AudioFileClip(music_path).fx(afx.volumex, 0.25)
+    narration.fx(afx.volumex, 6.0)
+    music = AudioFileClip(music_path).fx(afx.volumex, 0.5)
     music_over_words = CompositeAudioClip([narration, music])  # .set_fps(44100) use this if you've removed it from .write_videofile
     final_audio_and_video = final_video.set_audio(music_over_words)
-    final_audio_and_video.write_videofile("{}".format(title), fps=final_video.fps)
+    final_audio_and_video.write_videofile("{}".format(title), fps=final_video.fps, audio_codec="aac")
 
 
 
