@@ -1,3 +1,5 @@
+import PIL.Image
+
 try:
     import tkinter
 except ImportError:  # python 2
@@ -7,7 +9,7 @@ from moviepy.editor import *
 from functools import partial
 from moviepy.video.tools.subtitles import SubtitlesClip
 # import tkinter as tk
-# from PIL import ImageTk, Image
+import PIL
 # from resizeimage import resizeimage  # install as python-resize-image
 from tkinter import filedialog as fd
 
