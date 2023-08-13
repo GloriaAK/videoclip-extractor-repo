@@ -1,5 +1,3 @@
-import PIL.Image
-
 try:
     import tkinter
 except ImportError:  # python 2
@@ -9,7 +7,6 @@ from moviepy.editor import *
 from functools import partial
 from moviepy.video.tools.subtitles import SubtitlesClip
 # import tkinter as tk
-import PIL
 # from resizeimage import resizeimage  # install as python-resize-image
 from tkinter import filedialog as fd
 
@@ -125,17 +122,22 @@ ThirdFrame['pady'] = 5
 entry3 = tkinter.Entry(ThirdFrame, width=65, background="#444444")
 entry3.grid(row=0, column=0)
 
-# Frame and entries for start and stop timecodes
-FourthFrame = tkinter.LabelFrame(border_second_half, text="Start and Stop Marks (hh:mm:ss)",
+# Frame for the start and stop timecodes
+FourthFrame = tkinter.LabelFrame(border_second_half, text="Start, Stop, and Point Of Emphasis Marks (hh:mm:ss)",
                                  height=50, width=380, background="#383838", fg='#0277bd')
 FourthFrame.grid(row=3, column=1, columnspan=1, sticky="w", pady=10)
 FourthFrame['padx'] = 10
 FourthFrame['pady'] = 5
-entry4 = tkinter.Entry(FourthFrame, width=20, background="#444444")
-entry5 = tkinter.Entry(FourthFrame, width=20, background="#444444")
+# Entries for the Start and Stop Marker and Point Of Emphasis (POE)
+entry4 = tkinter.Entry(FourthFrame, width=18, background="#444444")
+entry5 = tkinter.Entry(FourthFrame, width=18, background="#444444")
+entry6 = tkinter.Entry(FourthFrame, width=17, background="#444444")
 entry4.grid(row=0, column=0, padx=10)
 entry5.grid(row=0, column=1, padx=10)
+entry6.grid(row=0, column=3, padx=10)
 
+
+# entries
 # Editing Code
 def select_file():
     filetypes = (('audio files', '*.mp3'), ('All files', '*.*'))
