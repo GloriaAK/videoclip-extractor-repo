@@ -194,12 +194,66 @@ def clipAssembler(top_img, clip, bottom_img, subs, end_img):
     final_video_clip = concatenate_videoclips([body_with_subs, end_img])
     return final_video_clip
 
+def audioClipping(music_filename):
+    music_filepath = music_filename
+    starting_string = entry4.get()
+    ending_string = entry5.get()
+    point_of_emphasis = entry6.get()
 
-def audioAdditionAndFinalization(final_video, music_path, title):
+    if "Tender Heart" in music_filepath:
+        music_point_of_emphasis = 62
+    elif "Unity of the Spirit" in music_filepath:
+        music_point_of_emphasis = 26  # actually 25
+    elif "Take Up Your Cross" in music_filepath:
+        music_point_of_emphasis = 65
+    elif "Renewal" in music_filepath:
+        music_point_of_emphasis = 64
+    elif "Rejoice in the Morning" in music_filepath:
+        music_point_of_emphasis = 45
+    elif "Light of Men" in music_filepath:
+        music_point_of_emphasis = 86
+
+    start_sec1 = starting_string[-2:]
+    start_min1 = starting_string[-5:-3]
+
+    end_sec1 = ending_string[-2:]
+    end_min1 = ending_string[-5:-3]
+
+    mid_sec1 = point_of_emphasis[-2:]
+    mid_min = point_of_emphasis[-5:-3]
+
+    m_duration = int(end_min1) - int(start_min1)
+    if (int(end_min1) - int(start_min1)) <= 0:
+        s_duration = (int(end_sec1)) - (int(start_sec1))
+        total_duration = ((m_duration * 60) + (s_duration))
+    else:
+        s_duration = (60 - (int(start_sec1))) + (int(end_sec1))
+        total_duration = (m_duration * 60) + (s_duration) - 60
+
+
+    m_duration = int(mid_min) - int(start_min1)
+    if (int(mid_min) - int(start_min1)) <= 0:
+        s_duration = (int(mid_sec1)) - (int(start_sec1))
+        duration_until_POE = ((m_duration * 60) + (s_duration))
+    else:
+        s_duration = (60 - (int(start_sec1))) + (int(mid_sec1))
+        duration_until_POE = (m_duration * 60) + (s_duration) - 60
+
+
+    duration_after_POE = total_duration - duration_until_POE
+
+    time_start = music_point_of_emphasis - duration_until_POE
+    time_end = music_point_of_emphasis + duration_after_POE + 2
+
+    music = AudioFileClip(music_filepath).subclip(time_start, time_end)
+    music_audio = music.fx(afx.volumex, 0.10).audio_fadein(1).audio_fadeout(1)
+    return music_audio
+
+
+def render_operator(final_video, title, music_audio):
     narration = final_video.audio
-    narration.fx(afx.volumex, 6.0)
-    music = AudioFileClip(music_path).fx(afx.volumex, 0.5)
-    music_over_words = CompositeAudioClip([narration, music])  # .set_fps(44100) use this if you've removed it from .write_videofile
+    narration.fx(afx.volumex, 5.0)
+    music_over_words = CompositeAudioClip([narration, music_audio])  # .set_fps(44100) use this if you've removed it from .write_videofile
     final_audio_and_video = final_video.set_audio(music_over_words)
     final_audio_and_video.write_videofile("{}".format(title), fps=final_video.fps, audio_codec="aac")
 
@@ -231,7 +285,9 @@ def finalize_video():
     extracted_subs = subtitleExtractor(srt_subs, video_START, video_end)
     final_video_clip = clipAssembler(top_image, video_clip, bottom_image, extracted_subs, ender_image)
     music_filename = select_file()
-    audioAdditionAndFinalization(final_video_clip, music_filename, name_place)
+    music_audio = audioClipping(music_filename)
+    render_operator(final_video_clip, name_place, music_audio)
+
 
 if __name__ == '__main__':
     run_action = partial(finalize_video)
